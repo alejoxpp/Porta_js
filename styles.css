@@ -241,3 +241,43 @@ html.js .reveal.is-visible { opacity: 1; transform: none; }
   .reveal { opacity: 1; transform: none; }
   html { scroll-behavior: auto; }
 }
+/* Estilo Glassmorphism para el botón */
+.btn-glass {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  color: #fff; /* Ajusta según el fondo de tu web */
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-glass:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+/* EL TRUCO MAGICO: Qué pasa cuando se genera el PDF */
+@media print {
+  /* Ocultar elementos que no van en un CV impreso/PDF */
+  nav, footer, #btn-descargar-cv, .animaciones-decorativas {
+    display: none !important;
+  }
+  
+  /* Ajustar colores para que el PDF sea legible */
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  
+  /* Evitar que los contenedores se corten a la mitad de la página */
+  section {
+    page-break-inside: avoid;
+  }
+}

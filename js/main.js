@@ -79,5 +79,13 @@ async function cargarGitHub(api, animaciones) {
   new Tema(document.querySelector("#btn-tema"));
   new Reloj().comenzar();   // 🕐 reloj en tiempo real del footer
   const animaciones = new Animaciones();
+  // Al final de tu main.js o en la inicialización
   
+const btnCV = document.getElementById('btn-descargar-cv');
+
+if (btnCV) {
+  btnCV.addEventListener('click', () => {
+    window.print();
+  });
+}
 iniciar();

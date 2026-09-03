@@ -68,3 +68,16 @@ export class Contacto {
     } catch (e) { /* sin internet: no pasa nada */ }
   }
 }
+
+class contacto {
+  procesarFormulario(evento) {
+    evento.preventDefault();
+    const textoMensaje = document.getElementById("mensaje").value;
+    if (textoMensaje.includes("http://") || textoMensaje.includes("https://")) {
+      alert("No se permiten enlaces en el mensaje.");
+      return;
+    }
+    // Aquí puedes agregar la lógica para enviar el formulario si es válido
+    console.log("El mensaje es seguro y se esta enviando.");
+  }
+}
