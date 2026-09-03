@@ -1,3 +1,13 @@
+# Respuestas
+1) clausula de guarda:
+function publicarComentario(usuario, texto) {
+  if (!usuario) return 
+    if (!usuario.activo) return 
+      if (!texto || texto.length === 0) return
+        console.log(usuario.nombre + " dijo: " + texto);
+}
+2) Candado: Da 19 👌
+
 # Portafolio v3 — JavaScript modular (POO + JSON)
 
 Este es el portafolio de la Clase 04 en su versión **profesional**: el JavaScript está
